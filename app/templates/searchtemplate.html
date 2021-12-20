@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}Hakutulokset{% endblock %}
+{% block head %}
+
+{{ super() }}
+
+{% endblock %}
+{% block content %}
+
+<h1 class="text-center">Haku</h1>
+
+<h3 class="text-center">Hakutulokset hakusanalle '{{ queryToShow }}'</h3>
+<form class="form-inline" style="margin: auto; display: block; padding-left: 20px;" class="text-center" action="/search" method="GET">
+    <input class="form-control mr-sm-2" type="search" placeholder="Hae uudelleen" name="q">
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Hae</button>
+</form>
+
+<hr>
+
+<div class="list-group">
+
+{% for response in responseToShow %}
+
+    <a href="/pages/{{response}}" class="list-group-item list-group-item-action"> {{ response }} </a>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

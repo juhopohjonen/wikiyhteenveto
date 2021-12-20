@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}{{ aihe }}{% endblock %}
+{% block head %}
+
+{{ super() }}
+
+{% endblock %}
+{% block content %}
+
+<h1 class="paddinged">
+    {{ aihe }} - Wikiyhteenveto
+</h1>
+<form class="form-inline" style="margin: auto; display: block; padding-left: 20px;" class="text-center" action="/search" method="GET">
+    <input class="form-control mr-sm-2" type="search" placeholder="Hae uudelleen" name="q">
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Hae</button>
+</form>
+
+<hr>
+
+
+
+<h3 class="paddinged">Yhteenveto aiheesta</h3>
+<p class="paddinged">{{ summary }}</p>
+
+<hr>
+
+<a class="paddinged" href='{{ hrefToOriginal }}'>Tieto pohjautuu Wikipedian artikkeliin '{{ aihe }}'</a>
+<p class="paddinged">Lisensoitu CC-BY-SA -lisenssillä: <a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a></p>
+
+<style>
+    .paddinged 
+    {
+        padding-left: 1%;
+    }
+</style>
+
+{% endblock %}

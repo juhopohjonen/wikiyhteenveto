@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Kotisivu{% endblock %}
+{% block head %}
+
+{{ super() }}
+
+{% endblock %}
+{% block content %}
+
+<h1 class="text-center">
+    Wikiyhteenveto
+</h1>
+
+
+<blockquote class="blockquote text-center">
+    <p>Wikiyhteenveto on varmaankin ihan ok sivusto - kai?</p>
+    <footer class="blockquote-footer">Sanoo sivuston käyttäjä <cite title="Source Title">Juho</cite></footer>
+</blockquote>
+
+<hr>
+
+<!-- Form  -->
+
+<div id="search">
+
+    <form class="form-inline d-flex justify-content-center" class="text-center" action="/search" method="GET">
+        <input class="form-control mr-sm-2" type="search" placeholder="Hakusana" name="q">
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Hae</button>
+    </form>
+
+    <br>
+
+    <div id="tulokset" class="text-center">
+        <p>Aloita hakemalla ylläolevasta laatikosta</p>
+    </div>
+
+</div>
+
+
+{% endblock %}
